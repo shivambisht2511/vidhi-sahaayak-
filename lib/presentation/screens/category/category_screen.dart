@@ -11,7 +11,6 @@ class CategoryScreen extends StatefulWidget {
 
 class _CategoryScreenState extends State<CategoryScreen> {
   final List<String> categories = [
-    "I need an AI Assistant",
     "I need a study companion",
     "I need a lawyer",
     "I need legal guidance",
@@ -65,8 +64,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.deepPurple,
                 foregroundColor: Colors.white,
-                padding:
-                const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 14,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -74,20 +75,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
               onPressed: selectedCategory == null
                   ? null
                   : () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChatScreen(
-                      category: selectedCategory!,
-                    ),
-                  ),
-                );
-              },
-              child: Text(
-                "Continue",
-                style: GoogleFonts.poppins(fontSize: 16),
-              ),
-            )
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ChatScreen(category: selectedCategory!),
+                        ),
+                      );
+                    },
+              child: Text("Continue", style: GoogleFonts.poppins(fontSize: 16)),
+            ),
           ],
         ),
       ),
